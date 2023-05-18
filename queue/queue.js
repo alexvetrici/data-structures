@@ -27,16 +27,3 @@ class Queue {
         return this.tail - this.head
     }
 }
-
-var q = new Queue()
-console.log(q.isEmpty())
-q.enqueue(5)
-q.enqueue(43)
-q.enqueue(78)
-console.log(q)
-console.log(q.peek())
-q.dequeue()
-q.dequeue()
-console.log(q.size)
-console.log(q.peek())
-console.log(q)
