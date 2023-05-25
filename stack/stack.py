@@ -19,11 +19,3 @@ class Stack:
 
     def peek(self):
         return self.stack[-1]
-    
-
-
-x = Stack()
-x.push(3)
-x.push(90)
-x.push(7)
-print(x.peek())
