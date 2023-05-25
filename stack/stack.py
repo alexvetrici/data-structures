@@ -16,3 +16,14 @@ class Stack:
 
     def size(self):
         return len(self.stack)
+
+    def peek(self):
+        return self.stack[-1]
+    
+
+
+x = Stack()
+x.push(3)
+x.push(90)
+x.push(7)
+print(x.peek())
