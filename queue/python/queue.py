@@ -1,3 +1,5 @@
+# Queue implementation with double-ended queue (deque) method
+
 from collections import deque
 
 class Queue:
