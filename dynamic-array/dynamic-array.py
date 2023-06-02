@@ -13,7 +13,8 @@ class DynamicArray():
     
     def __getitem__(self, index):
         if index > self.capacity:
-            print('Error: Index out of range')
+            print("Error: Index out of bound")
+            return
         return self.array[index]
     
     def displayArray(self):
@@ -27,6 +28,42 @@ class DynamicArray():
         self.array[self.count] = element
         self.count += 1
 
+    def insertAt(self, element, index):
+        if index > self.count:
+            print("Enter appropriate index..")
+            return
+
+        if self.count == self.capacity:
+            self._resize(2 * self.capacity)
+
+        temp = self.count
+        while temp != index:
+            self.array[temp] = self.array[temp - 1]
+            temp -= 1
+
+        self.array[index] = element
+        self.count += 1
+
+    def removeAt(self, index):
+        if self.count == 0:
+            print("Array is empty, removing is not possible")
+            return
+        
+        if index >= self.count:
+            print("Error: Index out of bound, removig is not possible")
+            return
+
+        if index == self.count - 1:
+            self.array[self.count] = 0
+            self.count -= 1
+            return
+        
+        for k in range(index, self.count - 1):
+            self.array[k] = self.array[k + 1]
+
+        self.array[self.count - 1] = 0
+        self.count -= 1
+
     def _resize(self, new_capacity):
         newArray = self.make_array(new_capacity)
         for k in range(self.count):
@@ -37,14 +74,3 @@ class DynamicArray():
 
     def make_array(self, new_capacity):
         return (new_capacity * ctypes.py_object)()
-    
-ar = DynamicArray()
-ar.displayArray()
-print(ar.__len__())
-ar.append(3)
-ar.append(8)
-ar.append(398)
-ar.append(0)
-ar.append(2)
-print(ar.__len__())
-ar.displayArray()
