@@ -1,28 +1,49 @@
 # Tree implementation 
 
 class Node:
+    # Tree Node structure
     def __init__(self, data):
         self.data = data
         self.left = None
         self.right = None
 
+# Inorder Traversal : left --> root --> right
 def inorder(node):
     if node:
         inorder(node.left)
         print(node.data)
         inorder(node.right)
 
+# Preorder Traversal : root --> left --> right
 def preorder(node):
     if node:
         print(node.data)
         preorder(node.left)
         preorder(node.right)
 
+# Postorder Traversal : left --> right --> root
 def postorder(node):
     if node:
         postorder(node.left)
         postorder(node.right)
         print(node.data)
+
+# Checking if is Full Binary Tree
+def isFullTree(root):
+
+    # An empty tree is Full
+    if root is None:
+        return True
+    
+    if root.left is None and root.right is None:
+        return True
+    
+    if root.left is not None and root.right is not None:
+        return (isFullTree(root.left) and isFullTree(root.right))
+    
+    return False
+
+
 
 root = Node(10)
 root.left = Node(78)
@@ -32,12 +53,15 @@ root.left.right = Node(9)
 root.right.left = Node(1)
 root.right.right = Node(3)
 
+if isFullTree(root):
+    print('This is a Full Binary Tree')
+else:
+    print('This is not a Binary Full Tree')
 
 # Tree Implementation with BigTree package
-
 # Run 'pip install bigtree' to install the package
 
-from bigtree import Node, preorder_iter, postorder_iter, inorder_iter
+from bigtree import Node, preorder_iter, postorder_iter
 
 root = Node(10)
 b = Node(78, parent=root)
