@@ -29,8 +29,6 @@ print(postorder) # [54, 9, 78, 1, 3, 2, 10]
 
 #Tree implementation from scratch
 
-# Tree implementation 
-
 class Node:
     # Tree Node structure
     def __init__(self, data):
