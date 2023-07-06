@@ -19,7 +19,4 @@ def build_min_heap(A):
     for i in range(n, -1, -1):
         min_heapify(A,i)
 
-A = [3,9,2,1,4,5,0,100]
-build_min_heap(A)
-print(A)
-
+    return A
