@@ -9,13 +9,14 @@ def min_heapify(A,i):
         smallest = i
     if r < len(A) and A[r] < A[smallest]:
         smallest = r
+
     if smallest != i:
         A[i], A[smallest] = A[smallest], A[i]
         min_heapify(A, smallest)
 
 
 def build_min_heap(A):
-    n = int((len(A)//2)-1)
+    n = int((len(A) // 2) - 1)
     for i in range(n, -1, -1):
         min_heapify(A,i)
 
