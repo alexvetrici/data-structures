@@ -1,5 +1,4 @@
 # Logic for dynamic array implementation
-
 import ctypes
 
 class DynamicArray():
@@ -12,7 +11,7 @@ class DynamicArray():
         return self.count
     
     def __getitem__(self, index):
-        if index > self.capacity:
+        if not 0 <= index < self.count:
             print("Error: Index out of bound")
             return
         return self.array[index]
