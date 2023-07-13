@@ -1,5 +1,3 @@
-# Graph implementation using Adjascency List
-
 class Graph:
     def __init__(self):
         self.adjList = {}
