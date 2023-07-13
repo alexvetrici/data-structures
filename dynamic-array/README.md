@@ -1,7 +1,3 @@
-# Dynamic Array
-
-![Dynamic Array](https://media.geeksforgeeks.org/wp-content/uploads/daynamic-array.png)
-
-# Resources
-[*Wikipedia*](https://en.wikipedia.org/wiki/Dynamic_array)<br>
-[*YouTube*](https://www.youtube.com/watch?v=jzJlq35dQII)
+## Resources
+[Dynamic Array on Wikipedia](https://en.wikipedia.org/wiki/Dynamic_array)<br>
+[Dynamic Array on YouTube by BroCode](https://www.youtube.com/watch?v=jzJlq35dQII)
